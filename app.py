@@ -42,7 +42,7 @@ def main():
                 
         
         st.balloons()
-        st.success('Your Insurance Cost is {}'.format(pred[0],2))
+        st.success('Your Insurance Cost is {:.2f}'.format(pred[0]))
                 
                 
                 
