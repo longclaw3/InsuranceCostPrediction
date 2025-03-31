@@ -13,13 +13,13 @@ def main():
     model = joblib.load('model_joblib_gr')
 
     # Display region information
-    st.markdown("""
-    **Region Mapping:**
-    - Southwest
-    - Southeast
-    - Northwest
-    - Northeast
-    """)
+    # st.markdown("""
+    # **Region Mapping:**
+    # - Southwest
+    # - Southeast
+    # - Northwest
+    # - Northeast
+    # """)
 
     # Input fields
     p1 = st.slider('Enter Your Age', 18, 100)
