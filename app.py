@@ -15,10 +15,10 @@ def main():
     # Display region information
     st.markdown("""
     **Region Mapping:**
-    - 1: Southwest
-    - 2: Southeast
-    - 3: Northwest
-    - 4: Northeast
+    - Southwest
+    - Southeast
+    - Northwest
+    - Northeast
     """)
 
     # Input fields
@@ -34,8 +34,9 @@ def main():
     p5 = st.selectbox("Smoker", ("Yes", "No"))
     p5 = 1 if p5 == 'Yes' else 0  
 
-    region_dict = {1: 'Southwest', 2: 'Southeast', 3: 'Northwest', 4: 'Northeast'}
-    p6 = st.slider("Select Your Region", 1, 4, format_func=lambda x: region_dict[x])
+    region_dict = {"Southwest": 1, "Southeast": 2, "Northwest": 3, "Northeast": 4}
+    region_selected = st.selectbox("Select Your Region", list(region_dict.keys()))
+    p6 = region_dict[region_selected]
 
     # Prediction
     if st.button('Predict'):
