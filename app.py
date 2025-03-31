@@ -12,6 +12,15 @@ def main():
 
     model = joblib.load('model_joblib_gr')
 
+    # Display region information
+    st.markdown("""
+    **Region Mapping:**
+    - 1: Southwest
+    - 2: Southeast
+    - 3: Northwest
+    - 4: Northeast
+    """)
+
     # Input fields
     p1 = st.slider('Enter Your Age', 18, 100)
 
@@ -25,7 +34,8 @@ def main():
     p5 = st.selectbox("Smoker", ("Yes", "No"))
     p5 = 1 if p5 == 'Yes' else 0  
 
-    p6 = st.slider("Enter Your Region", 1, 4)
+    region_dict = {1: 'Southwest', 2: 'Southeast', 3: 'Northwest', 4: 'Northeast'}
+    p6 = st.slider("Select Your Region", 1, 4, format_func=lambda x: region_dict[x])
 
     # Prediction
     if st.button('Predict'):
